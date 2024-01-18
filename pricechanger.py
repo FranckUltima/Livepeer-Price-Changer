@@ -25,7 +25,7 @@ def update_config_file(node, price):
     # Replace the line with the price per pixel with the new value
     for i, line in enumerate(lines):
         if 'pricePerUnit' in line:
-            lines[i] = f'pricePerUnit={price}\n'
+            lines[i] = f'pricePerUnit {price}\n'
 
     with open(node['config_file'], 'w') as file:
         file.writelines(lines)
